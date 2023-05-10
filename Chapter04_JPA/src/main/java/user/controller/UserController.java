@@ -1,6 +1,8 @@
 package user.controller;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,21 +36,39 @@ public class UserController {
 	@ResponseBody
 	public void write(@ModelAttribute UserDTO userDTO) {
 		userService.write(userDTO);
-		
 	}
 	@PostMapping("getUserList")
 	@ResponseBody
 	public List<UserDTO> getUserList() {
 		return userService.getUserList();
-		
 	}
 	
 	@PostMapping("isExistId")
 	@ResponseBody
 	public String isExistId(@RequestParam String id) {
 		return userService.isExistId(id);
-		
+	}
+	
+	@PostMapping("search")
+	@ResponseBody
+//	public List<UserDTO> search(@RequestParam String searchOption, @RequestParam String keyword) {
+	public List<UserDTO> search(@RequestParam Map<String, String> map) {
+		return userService.search(map);
+	}
+	
+	@GetMapping("updateForm")
+	public String updateForm() {
+		return "user/updateForm";
 	}
 
-
+	@PostMapping("getUser")
+	@ResponseBody
+	public Optional<UserDTO> getUser(@RequestParam String id) {
+		return userService.getUser(id);
+	}
+	
+	@GetMapping("deleteForm")
+	public String deleteForm() {
+		return "user/deleteForm";
+	}
 }

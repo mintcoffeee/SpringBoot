@@ -14,6 +14,13 @@
 </style>
 </head>
 <body>
+<h3>
+	<a href="/">
+		<img src="/image/apeach.gif" alt="apeach" width="50" height="50"
+			style="cursor:pointer;">
+		등록
+	</a>
+</h3>
 <form id="writeForm">
 	<table border="1">
 		<tr>
