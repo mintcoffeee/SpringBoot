@@ -21,6 +21,8 @@
 <div id="resultDiv"></div>
 <%-- <div id="updateDiv"></div> --%>
 
+
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="/js/update.js"></script>
 <script type="text/javascript" src="/js/write.js"></script>
